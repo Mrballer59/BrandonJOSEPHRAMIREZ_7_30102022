@@ -3,7 +3,7 @@ import React from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useState, useContext } from "react";
-import { states } from "../../config/StateSelector";
+import { states, departement } from "../../config/StateSelector";
 import "./AddEmployee.css";
 import Modal from "../../components/popup/popUp";
 import StateSeletor from "../../components/stateSelector/StateSeletor";
@@ -14,6 +14,7 @@ function AddEmployee() {
 
   const [User, setUser] = useState({
     state: "",
+    department: "",
   });
 
   return (
@@ -55,14 +56,12 @@ function AddEmployee() {
           <input id="zip-code" type="number" />
         </fieldset>
 
-        <label htmlFor="departement">Departement</label>
-        <select name="department" id="department">
-          <option>Sales</option>
-          <option>Marketing</option>
-          <option>Engineering</option>
-          <option>Human Resources</option>
-          <option>Legal</option>
-        </select>
+        <StateSeletor
+          title="Departement"
+          type={departement}
+          setUser={setUser}
+          User={User}
+        />
       </form>
       <button className="btn" onClick={() => setIsOpen(true)}>
         Save

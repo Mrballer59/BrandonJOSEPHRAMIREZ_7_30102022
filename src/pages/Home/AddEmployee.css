@@ -1,0 +1,37 @@
+.employee-Section {
+  padding: 0 50px 50px 50px;
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  margin: auto;
+  border-radius: 5px;
+  border: 3px solid #94ad1852;
+  background-color: #71ad180f;
+  margin-bottom: 20px;
+}
+.employee-Section button {
+  margin-top: 15px;
+}
+label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 5px;
+}
+.address {
+  margin-top: 10px;
+}
+select {
+  background-color: rgb(93, 202, 127);
+  border-radius: 30px;
+  height: 30px;
+  width: 200px;
+  border: none;
+  padding: 5px;
+}
+.btn {
+  background-color: rgb(43, 55, 223);
+  color: rgb(93, 202, 127);
+  border-radius: 30px;
+  width: 500px;
+  height: 30px;
+}
