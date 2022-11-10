@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.entries-selector {
+  display: flex;
+  align-items: center;
+}
+.sectionpart {
+  width: 70px;
+}
