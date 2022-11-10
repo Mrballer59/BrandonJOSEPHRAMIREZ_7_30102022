@@ -237,9 +237,16 @@ export const states = [
   },
 ];
 export const departement = [
-  { name: "Sales" },
-  { name: "Marketing" },
-  { name: "Engineering" },
-  { name: "Human Resources" },
-  { name: "Legal" },
+  "Sales",
+  "Marketing",
+  "Engineering",
+  "Human Resources",
+  "Legal",
+];
+
+export const sortType = [
+  { name: 10 },
+  { name: 25 },
+  { name: 50 },
+  { name: 100 },
 ];
