@@ -1,72 +1,115 @@
 import React from "react";
-// import { DataContext } from "../../data/dataContext";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+// import DatePicker from "react-datepicker";
+// import "react-datepicker/dist/react-datepicker.css";
 import { useState, useContext } from "react";
 import { states, departement } from "../../config/StateSelector";
 import "./AddEmployee.css";
 import Modal from "../../components/popup/popUp";
-import StateSeletor from "../../components/stateSelector/StateSeletor";
+import { DataContext } from "../../data/DataContext";
+import Dropdown from "../../components/stateSelector/Dropdown";
+import Input from "../../components/inputs/Inputs";
 
 function AddEmployee() {
+  //open modal
   const [isOpen, setIsOpen] = useState(false);
+  // packaging datePicker
   const [startDate, setStartDate] = useState(new Date());
+  //set up DataContext for users info globle Statemanager
+  const data = useContext(DataContext);
+  const { UserInfo, setUserInfo } = data;
+  //Dropdown list custom hook
 
   const [User, setUser] = useState({
     state: "",
-    department: "",
+    departement: "",
+    firstName: "",
+    lastName: "",
+    dateOfBirth: "",
+    startDate: "",
+    street: "",
+    city: "",
+    zipCode: "",
   });
+
+  // console.log(startDate);
+  console.log("state inside User : ", User.state);
+
+  // Saves the selected drop down list and uses concat to add the new array
+  const onSave = () => {
+    setUserInfo(UserInfo.concat(User));
+    setIsOpen(true);
+  };
 
   return (
     <section className="employee-Section">
       <h2>Create Employee </h2>
       <form action="#" id="form-employee">
-        <label htmlFor="FirstName">First Name</label>
-        <input type="text" id="FirstName" />
+        <label>First Name</label>
+        <Input name="firstName" type="firstName" onChangeInput={setUser} />
 
-        <label htmlFor="LastName">Last Name</label>
-        <input type="text" id="LastName" />
+        <label>Last Name</label>
+        <Input name="lastName" type="lastName" onChangeInput={setUser} />
 
-        <label htmlFor="date-of-birth">Date of Birth</label>
-        <input id="date-of-birth" type="text" />
-
-        <label htmlFor="Start-date">Start Date</label>
-        <DatePicker
-          id="start-date"
-          selected={startDate}
-          onChange={(date) => setStartDate(date)}
+        <label>Date of Birth</label>
+        {/* <input
+          id="dateOfBirth"
+          type="date"
+          onChange={(e) => setUser({ ...User, dateOfBirth: e.target.value })}
+        /> */}
+        <Input
+          name="dateOfBirth"
+          type="date"
+          id="dateOfBirth"
+          onChangeInput={setUser}
         />
 
+        <label>Start Date</label>
+        {/* <input
+          type="date"
+          id="startDate"
+          name="startDate"
+          onChange={(e) => setUser({ ...User, startDate: e.target.value })}
+        /> */}
+        <Input
+          name="startDate"
+          type="date"
+          id="startDate"
+          onChangeInput={setUser}
+        />
         <fieldset className="address">
           <legend>Adress</legend>
 
-          <label htmlFor="street">Street</label>
-          <input id="street" type="text" />
+          <label>Street</label>
+          <Input name="street" type="street" onChangeInput={setUser} />
 
-          <label htmlFor="street">City</label>
-          <input id="street" type="text" />
+          <label>City</label>
+          <Input name="city" type="city" onChangeInput={setUser} />
 
-          <StateSeletor
-            title="states"
-            type={states}
-            setUser={setUser}
-            User={User}
+          <label>State</label>
+          <Dropdown
+            name="state"
+            type="state"
+            selector={states}
+            itemSelector={true}
+            onChangeState={setUser}
           />
-          <label htmlFor="street">Zip Code</label>
-          <input id="zip-code" type="number" />
+          <label>Zip Code</label>
+          <Input name="zipCode" type="zipCode" onChangeInput={setUser} />
         </fieldset>
 
-        <StateSeletor
-          title="Departement"
-          type={departement}
-          setUser={setUser}
-          User={User}
+        <label>Department</label>
+        <Dropdown
+          name="departement"
+          type="departement"
+          selector={departement}
+          itemSelector={false}
+          onChangeDepart={setUser}
         />
       </form>
-      <button className="btn" onClick={() => setIsOpen(true)}>
+      <button className="btn" onClick={() => onSave()}>
         Save
       </button>
-      {isOpen && <Modal setIsOpen={setIsOpen} />}
+      {isOpen ? <Modal setIsOpen={setIsOpen} /> : ""}
     </section>
   );
 }

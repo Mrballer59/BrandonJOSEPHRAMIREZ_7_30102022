@@ -45,7 +45,7 @@
 .Btn-succ:hover {
   box-shadow: 0 10px 20px -10px #106d13;
   transform: translateY(-5px);
-  background: #158f19;
+  background: #0e178c;
 }
 .Btn-succ {
   margin-top: 10px;
@@ -56,6 +56,6 @@
   font-size: 0.8rem;
   border: none;
   color: #fff;
-  background: #158f19;
+  background: #098ec7;
   transition: all 0.25s ease;
 }
