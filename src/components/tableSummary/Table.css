@@ -1,0 +1,10 @@
+table {
+  border-collapse: collapse;
+  width: 980px;
+}
+tbody {
+  border-bottom: 1px solid black;
+}
+.col-title {
+  border-bottom: 1px solid black;
+}
