@@ -1,6 +1,4 @@
 import React from "react";
-// import DatePicker from "react-datepicker";
-// import "react-datepicker/dist/react-datepicker.css";
 import { useState, useContext } from "react";
 import { states, departement } from "../../config/StateSelector";
 import "./AddEmployee.css";
@@ -51,11 +49,6 @@ function AddEmployee() {
         <Input name="lastName" type="lastName" onChangeInput={setUser} />
 
         <label>Date of Birth</label>
-        {/* <input
-          id="dateOfBirth"
-          type="date"
-          onChange={(e) => setUser({ ...User, dateOfBirth: e.target.value })}
-        /> */}
         <Input
           name="dateOfBirth"
           type="date"
@@ -64,12 +57,6 @@ function AddEmployee() {
         />
 
         <label>Start Date</label>
-        {/* <input
-          type="date"
-          id="startDate"
-          name="startDate"
-          onChange={(e) => setUser({ ...User, startDate: e.target.value })}
-        /> */}
         <Input
           name="startDate"
           type="date"
