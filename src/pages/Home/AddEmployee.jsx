@@ -29,8 +29,7 @@ function AddEmployee() {
     zipCode: "",
   });
 
-  // console.log(startDate);
-  console.log("state inside User : ", User.state);
+  // console.log("state inside User : ", User.state);
 
   // Saves the selected drop down list and uses concat to add the new array
   const onSave = () => {
