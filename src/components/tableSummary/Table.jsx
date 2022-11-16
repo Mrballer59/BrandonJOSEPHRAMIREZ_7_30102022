@@ -7,11 +7,9 @@ import { DataContext } from "../../data/DataContext";
 
 const Table = () => {
   const userData = useContext(DataContext);
-  //sort colmns
+  //SORT colmns
   const [data, setData] = useState();
   const [order, setOrder] = useState("ASC");
-
-  // console.log(userData.UserInfo);
 
   const sorting = (col) => {
     if (order === "ASC") {
@@ -29,16 +27,21 @@ const Table = () => {
       setOrder("ASC");
     }
   };
+  // searchBar
+
+  const [searchPharse, setSearchPhrase] = useState("");
 
   return (
     <div>
       <div>
         <input
-          type="text"
+          type="search"
           placeholder="search"
-          // value={searchPharse}
-          // onChange={search}
+          onChange={(e) => {
+            setSearchPhrase(e.target.value);
+          }}
         />
+        {console.log(searchPharse)}
       </div>
       <table>
         <tbody>
@@ -54,7 +57,29 @@ const Table = () => {
             <th onClick={() => sorting("zipCode")}>Zip code </th>
           </tr>
 
-          {userData.UserInfo.map((user, index) => (
+          {userData.UserInfo.filter((val) => {
+            if (searchPharse === "") {
+              return val;
+            } else if (
+              val.firstName
+                .toLowerCase()
+                .includes(searchPharse.toLowerCase()) ||
+              val.lastName.toLowerCase().includes(searchPharse.toLowerCase()) ||
+              val.startDate
+                .toLowerCase()
+                .includes(searchPharse.toLowerCase()) ||
+              val.departement
+                .toLowerCase()
+                .includes(searchPharse.toLowerCase()) ||
+              val.dateOfBirth
+                .toLowerCase()
+                .includes(searchPharse.toLowerCase()) ||
+              val.street.toLowerCase().includes(searchPharse.toLowerCase()) ||
+              val.city.toLowerCase().includes(searchPharse.toLowerCase())
+            ) {
+              return val;
+            }
+          }).map((user, index) => (
             <tr key={index}>
               <td>{user.firstName}</td>
               <td>{user.lastName}</td>
