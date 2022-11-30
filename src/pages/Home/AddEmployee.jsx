@@ -29,17 +29,13 @@ function AddEmployee() {
     zipCode: "",
   });
 
-  // console.log("state inside User : ", User.state);
+  // console.log("state inside User : ", user.state);
 
   // Saves the selected drop down list and uses concat to add the new array
   const onSave = () => {
-    let employees = JSON.parse(localStorage.getItem("employees")) || [];
-    employees.push(user);
-    localStorage.setItem("employees", JSON.stringify(employees));
     setUserInfo(userInfo.concat(user));
     setIsOpen(true);
   };
-
   return (
     <section className="employee-Section">
       <h2>Create Employee </h2>
