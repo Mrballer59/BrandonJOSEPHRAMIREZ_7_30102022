@@ -3,7 +3,7 @@ import Header from "./components/header/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AddEmployee from "./pages/Home/AddEmployee";
 import { DataProvider } from "./data/DataContext";
-import SummaryList from "./pages/SummaryList";
+import ShowEmployee from "./pages/ShowEmployee/ShowEmployee";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<AddEmployee />} />
-          <Route path="/User-List" element={<SummaryList />} />
+          <Route path="/user-List" element={<ShowEmployee />} />
           <Route />
         </Routes>
       </DataProvider>
