@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useContext } from "react";
 import { states, departement } from "../../config/StateSelector";
 import "./AddEmployee.css";
-import Modal from "../../components/popup/popUp";
+import Modal from "../../components/popup/PopUp";
 import { DataContext } from "../../data/DataContext";
 import Dropdown from "../../components/stateSelector/Dropdown";
 import Input from "../../components/inputs/Inputs";
@@ -14,10 +14,10 @@ function AddEmployee() {
   const [startDate, setStartDate] = useState(new Date());
   //set up DataContext for users info globle Statemanager
   const data = useContext(DataContext);
-  const { UserInfo, setUserInfo } = data;
+  const { userInfo, setUserInfo } = data;
   //Dropdown list custom hook
 
-  const [User, setUser] = useState({
+  const [user, setUser] = useState({
     state: "",
     departement: "",
     firstName: "",
@@ -33,7 +33,10 @@ function AddEmployee() {
 
   // Saves the selected drop down list and uses concat to add the new array
   const onSave = () => {
-    setUserInfo(UserInfo.concat(User));
+    let employees = JSON.parse(localStorage.getItem("employees")) || [];
+    employees.push(user);
+    localStorage.setItem("employees", JSON.stringify(employees));
+    setUserInfo(userInfo.concat(user));
     setIsOpen(true);
   };
 
@@ -92,7 +95,7 @@ function AddEmployee() {
           onChangeDepart={setUser}
         />
       </form>
-      <button className="btn" onClick={() => onSave()}>
+      <button className="btn" onClick={onSave}>
         Save
       </button>
       {isOpen ? <Modal setIsOpen={setIsOpen} /> : ""}

@@ -1,7 +1,7 @@
 import React from "react";
 import "./popUp.css";
 
-function popUp({ setIsOpen }) {
+function PopUp({ setIsOpen }) {
   return (
     <>
       <div className="bigDiv" onClick={() => setIsOpen(false)} />
@@ -21,4 +21,4 @@ function popUp({ setIsOpen }) {
   );
 }
 
-export default popUp;
+export default PopUp;
