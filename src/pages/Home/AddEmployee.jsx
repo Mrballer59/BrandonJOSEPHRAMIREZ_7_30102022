@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useContext } from "react";
 import { states, departement } from "../../config/StateSelector";
 import "./AddEmployee.css";
-import Modal from "../../components/popup/PopUp";
+import Modal from "../../components/popup/popUp";
 import { DataContext } from "../../data/DataContext";
 import Dropdown from "../../components/stateSelector/Dropdown";
 import Input from "../../components/inputs/Inputs";
