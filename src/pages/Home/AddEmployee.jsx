@@ -6,7 +6,7 @@ import "./AddEmployee.css";
 import { DataContext } from "../../data/DataContext";
 import Dropdown from "../../components/stateSelector/Dropdown";
 import Input from "../../components/inputs/Inputs";
-import PopUp from "mrballerpopup/dist/components/PopUp";
+import { PopUp } from "mrballerpopup";
 
 function AddEmployee() {
   //open modal
