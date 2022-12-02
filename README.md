@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+![made-with-node](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white) ![made-with-react](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![made-with-react-rooter](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Wealth Health : Projet d'étude P14 OpenClassrooms
 
-## Available Scripts
+## Faites passer une librairie jQuery vers React
 
-In the project directory, you can run:
+Vous travaillez pour le département technologique d'une grande société financière, WealthHealth.
 
-### `npm start`
+Cette société utilise une application web interne, appelée HRnet, qui gère les dossiers des employés. L'application est ancienne et utilise jQuery côté front end, ce qui entraîne des bugs considérables et une augmentation des plaintes en interne. Votre équipe de développement s'efforce depuis un certain temps déjà de mettre à niveau l'application jQuery. La direction a finalement donné son accord pour mettre à jour HRnet et la convertir en React !
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Logo de Wealth Health](https://user.oc-static.com/upload/2020/08/14/15974125765772_image2.jpg)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Sources :
 
-### `npm test`
+[jQuery app](https://github.com/OpenClassrooms-Student-Center/P12_Front-end)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Librairie convertie
 
-### `npm run build`
+[Plugin Repo PopUp Modal](https://github.com/Mrballer59/hr-component-library-popUp)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[Plugin Npm PopUp ](https://www.npmjs.com/package/mrballerpopup)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [NodeJS (version 16.17.0)](https://nodejs.org/en/download/)
+- [Npm ( version 8.15.0)](https://www.npmjs.com/package/download)
 
-### `npm run eject`
+- [React(v18.0.0)](https://reactjs.org/)
+- [react-router-dom(v6.3.0)](https://reactrouter.com/web/guides/quick-start)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Lighthouse reports performance
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[React App Form](https://github.com/Mrballer59/HRnet-BrandonJOSEPHRAMIREZ_14_30102022/blob/master/LightHouse-Performances/React/HomePage.pdf)  
+[React App Employees](https://github.com/Mrballer59/HRnet-BrandonJOSEPHRAMIREZ_14_30102022/blob/master/LightHouse-Performances/React/EmployeeList.pdf)  
+[Jquery App Form](https://github.com/Mrballer59/HRnet-BrandonJOSEPHRAMIREZ_14_30102022/blob/master/LightHouse-Performances/Jquery/HomePage-Jquery.pdf)  
+[Jquery App Employees](https://github.com/Mrballer59/HRnet-BrandonJOSEPHRAMIREZ_14_30102022/blob/master/LightHouse-Performances/Jquery/Employee-List-Jquery.pdf)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Installation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Clone this repository
+   ```sh
+   git clone https://github.com/Mrballer59/HRnet-BrandonJOSEPHRAMIREZ_14_30102022
+   ```
+2. Install Npm packages & run the project (port 3000 by default)
+   ```sh
+   npm i && npm start
+   ```
 
-## Learn More
+## Author
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Brandon JR
